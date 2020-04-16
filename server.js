@@ -4,7 +4,8 @@ const port = process.env.PORT || 5000;
 
 const MoviesRouter = require('./server/movies/routes.config');
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+app.listen(port);
+// app.listen(port, () => console.log(`Listening on port ${port}`));
 
 app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -14,3 +15,5 @@ app.use(function (req, res, next) {
 
 // create routes
 MoviesRouter.routesConfig(app);
+
+module.exports = app;
